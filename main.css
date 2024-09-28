@@ -356,6 +356,19 @@ section p {
     
 }
 
+.MensagemNino {
+    font-family: 'Consolas', monospace; /* Fonte personalizada */
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    color:rgba(1, 26, 65, 0.897);
+    background-color: #94b6eb; /* Azul claro */
+    z-index: 2; 
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
 .container {
     text-align: center;
 }
@@ -592,10 +605,14 @@ button:hover {
     background-color: #45a049;
 }
 
-#feedbacks {
+#cont {
     width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 600px; /* Largura máxima para o container */
+    margin: 20px auto; /* Centraliza o container na página */
+    padding: 20px; /* Adiciona espaço interno ao container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra para destaque */
+    border-radius: 10px; /* Arredonda os cantos do container */
+    background-color: #f9f9f9; /* Cor de fundo do container */
 }
 
 .feedback-item {
@@ -605,11 +622,6 @@ button:hover {
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.error {
-    color: red;
-    margin: 10px 0;
 }
 
 .github-link {
@@ -631,10 +643,12 @@ footer {
     width: 100%;
     position: relative;
 }
+
 footer a {
     color: #ffc107;
     text-decoration: none;
 }
+
 footer a:hover {
     text-decoration: underline;
 }
