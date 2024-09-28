@@ -49,7 +49,7 @@
         <div class="Teamnino">
             <h1>Faça aqui o Feedback</h1><br>
         </div>
-        <form id="feedbackForm">
+        <form action="https://formspree.io/f/movagdwr" method="POST">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
 
@@ -61,14 +61,8 @@
 
             <button type="submit">Enviar Feedback</button>
         </form>
-
-        <div id="feedbacks">
-            <div class="Teamnino">
-                <h2>Feedbacks Recebidos</h2>
-            </div>
-        </div>
     </div>
-
+<!--
     <script>
         // Carrega feedbacks do localStorage quando a página é carregada
         document.addEventListener('DOMContentLoaded', loadFeedbacks);
@@ -122,6 +116,6 @@
             document.getElementById('feedbackForm').reset();
         });
     </script>
-
+    -->
 </body>
 </html>
