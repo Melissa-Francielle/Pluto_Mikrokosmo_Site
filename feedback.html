@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <header>
+        <div class="new-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="buttonAssets">Sobre o jogo</a></li>
+                    <li><a href="assets.html" class="buttonAssets">Jogo Assets</a></li>
+                    <li><a href="sobreEquipe.html" class="buttonAssets">Sobre a equipe</a></li>
+                    <li><a href="feedback.html" class="buttonAssets">Feedback</a></li>
+                     <li><a href="https://github.com/seu-repositorio" target="_blank" class="github-link">
+                      <img src="./image/github.png" alt="GitHub" class="github-icon">
+                    </a></li> 
+                    
+                </ul>
+            </nav>
+    </header>
+    <div>
+        <a href="#" class="back-to-top">
+            <img src="image/seta.png" alt="Voltar ao topo">
+        </a> 
+    </div>   
+    <section class="assetsTela">
+        <div class="assetsTela-overlay"></div> <!-- Div para o blur -->
+        <div class="assetsTela-content">
+            <img src="./image/Titulo.png" alt="Titulo" class="titlePluto" />
+        </div>
+    </section>  
+    <div id="container">
+        <div clas="Teamnino">
+            <footer>
+                <p> Caso não se sinta confortável em deixar o seu feedback em nosso site, pode enviar diretamente para nosso email.
+                    Agradecemos desde de já a sua presença e seu feedback! E se precisar de mais informações ou tiver dúvidas, entre em contato conosco</p>
+                <p><a href="mailto:plutoMikrokosmo@gmail.com">plutoMikrokosmo@gmail.com</a></p>
+            </footer>
+        </div>
+    </div>
+    <div id="container">
+        <div class="Teamnino">
+            <h1>Faça aqui o Feedback</h1><br>
+        </div>
+        <form id="feedbackForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+    
+            <label for="title">Título do Feedback:</label>
+            <input type="text" id="title" name="title" placeholder="Digite o título" required>
+    
+            <label for="message">Seu Feedback:</label>
+            <textarea id="message" name="message" placeholder="Escreva seu feedback" required></textarea>
+    
+            <button type="submit">Enviar Feedback</button>
+        </form>
+    
+        <div id="feedbacks">
+            <div class="Teamnino">
+                <h2>Feedbacks Recebidos</h2>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Carrega feedbacks do localStorage quando a página é carregada
+        document.addEventListener('DOMContentLoaded', loadFeedbacks);
+    
+        // Carrega os feedbacks armazenados no localStorage
+        function loadFeedbacks() {
+            const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+            feedbacks.forEach(displayFeedback);
+        }
+    
+        // Função para exibir feedback na página
+        function displayFeedback(feedback) {
+            const feedbackContainer = document.createElement('div');
+            feedbackContainer.classList.add('feedback-item');
+    
+            const feedbackTitle = document.createElement('h3');
+            feedbackTitle.textContent = feedback.title;
+    
+            const feedbackName = document.createElement('p');
+            feedbackName.textContent = `Enviado por: ${feedback.name}`;
+    
+            const feedbackMessage = document.createElement('p');
+            feedbackMessage.textContent = feedback.message;
+    
+            feedbackContainer.appendChild(feedbackTitle);
+            feedbackContainer.appendChild(feedbackName);
+            feedbackContainer.appendChild(feedbackMessage);
+    
+            document.getElementById('feedbacks').appendChild(feedbackContainer);
+        }
+    
+        // Salva novo feedback no localStorage e exibe na página
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o recarregamento da página
+    
+            const name = document.getElementById('name').value || 'Anônimo';
+            const title = document.getElementById('title').value;
+            const message = document.getElementById('message').value;
+    
+            const feedback = { name, title, message };
+    
+            // Salva no localStorage
+            const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+            feedbacks.push(feedback);
+            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    
+            // Exibe o novo feedback na página
+            displayFeedback(feedback);
+    
+            // Limpa o formulário
+            document.getElementById('feedbackForm').reset();
+        });
+    </script>
+    
+    </body>
+    </html>
