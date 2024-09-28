@@ -548,6 +548,70 @@ section p {
     border-radius: 50%; /* Opcional, para deixar a imagem circular */
 }
 
+
+#feedbackForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Limita o tamanho máximo do formulário */
+    margin: auto;
+}
+
+label, input, textarea, button {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical; /* Permite que o usuário redimensione a altura */
+    min-height: 150px; /* Altura mínima da textarea */
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#feedbacks {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.feedback-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}
+
 .github-link {
     display: inline;
     margin-left: 15px;
@@ -557,4 +621,20 @@ section p {
     width: 24px;
     height: 24px;
     vertical-align: middle;
+}
+
+footer {
+    text-align: center;
+    background-color: #040041;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+}
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
 }
